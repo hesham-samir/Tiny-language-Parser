@@ -114,7 +114,7 @@ void TreeNode::add_brother(TreeNode  brother_in)
         cout << "Node that has brother: " << t_ptr->get_token().get_type() << " " << t_ptr->dim_x << endl;
         cout << "No. of children is " << t_ptr->children.size() << endl;
         cout << "brother before: " << t_ptr->brother->get_token().get_type() << " " << t_ptr->brother->dim_x << endl;
-        if(t_ptr->brother->dim_x < t_ptr->dim_x)
+        if(t_ptr->brother->dim_x <= t_ptr->dim_x)
         {
             t_ptr->brother->dim_x = t_ptr->dim_x + 400;
         }

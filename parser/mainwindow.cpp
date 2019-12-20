@@ -10,6 +10,7 @@
 #include <QGraphicsTextItem>
 #include <QToolBar>
 #include <QString>
+#include <QFont>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -22,10 +23,14 @@ MainWindow::MainWindow(QWidget *parent)
 void MainWindow::init_main_window()
 {
     QLabel * main_label = new QLabel("Please Enter Tiny Code here");
+    main_label->setFont(QFont("Calibri", 14,1,false));
 
     this->text_input = new QTextEdit;
+    text_input->setFont(QFont("Calibri", 18,75,false));
 
     QPushButton * apply_parser = new QPushButton("Apply Parser");
+    apply_parser->setFont(QFont("Calibri", 14,1,false));
+
     QHBoxLayout * h1 = new QHBoxLayout;
     h1->addStretch();
     h1->addWidget(apply_parser);
@@ -132,6 +137,9 @@ MainWindow::~MainWindow()
 {
     delete this->graph_window;
     delete this->main_window;
+    delete this->graph;
+    delete this->text_input;
+    delete this->graph_scene;
 }
 
 void MainWindow::draw_rectangle(int x, int y, QString type, QString value)
